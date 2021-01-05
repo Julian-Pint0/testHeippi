@@ -1,0 +1,93 @@
+
+	<div fxLayout="column" class="mt-10">
+		<form 
+			[formGroup]="form"
+			(ngSubmit)="action()"
+			#f="ngForm">
+			<div fxLayout="column">
+				<mat-form-field class="">
+				  <mat-label>Número de identificación</mat-label>
+				  <input 
+				  	matInput 
+				  	autocomplete="off" 
+				  	type="number"
+				  	formControlName="document">
+				  <mat-error *ngIf="getControls.document.errors?.required">
+				  	Este campo es obligatorio
+				  </mat-error>
+				  <mat-error *ngIf="getControls.document.errors?.minlength" >
+				  	la longitud mínima es de 6 caracteres
+				  </mat-error>
+				</mat-form-field>			
+
+				<mat-form-field class="example-form-field">
+				  <mat-label>Nombre Completo</mat-label>
+				  <input 
+					  matInput 
+					  autocomplete="off"
+					  type="text"
+					  formControlName="name">
+				  <mat-error *ngIf="getControls.name.errors?.required">
+				  	Este campo es obligatorio
+				  </mat-error>
+				  <mat-error *ngIf="getControls.name.errors?.minlength" >
+				  	la longitud mínima es de 5 caracteres
+				  </mat-error>
+				</mat-form-field>
+
+				<mat-form-field class="example-form-field">
+				  <mat-label>Celular</mat-label>
+				  <input 
+				  	matInput 
+				  	type="number"
+				  	autocomplete="off"
+				  	formControlName="telephone">
+				  <mat-error *ngIf="getControls.telephone.errors?.required">
+				  	Este campo es obligatorio
+				  </mat-error>
+				  <mat-error *ngIf="getControls.telephone.errors?.minlength" >
+				  	la longitud mínima es de 13 caracteres
+				  </mat-error>
+				</mat-form-field>
+
+				<mat-form-field class="example-form-field">
+				  <mat-label>Dirección</mat-label>
+				  <input 
+					  matInput 
+					  type="text"
+					  autocomplete="off"
+					  formControlName="direction">
+				  <mat-error *ngIf="getControls.direction.errors?.required">
+				  	Este campo es obligatorio
+				  </mat-error>
+				  <mat-error *ngIf="getControls.direction.errors?.minlength" >
+				  	la longitud mínima es de 10 caracteres
+				  </mat-error>
+				</mat-form-field>
+
+				<mat-form-field class="example-form-field">
+				  <mat-label>Fecha de Cumpleaños</mat-label>
+				  <input 
+					  matInput 
+					  autocomplete="off" 
+					  type="text"
+					  formControlName="birthdayDate">
+				  <mat-error *ngIf="getControls.birthdayDate.errors?.required">
+				  	Este campo es obligatorio
+				  </mat-error>
+				  <mat-error *ngIf="getControls.birthdayDate.errors?.pattern" >
+				  	formato correcto: dd/mm/aaaa, ej: 1/1/2000
+				  </mat-error>
+				</mat-form-field>				
+			</div>
+
+			<div fxLayout="row" fxLayoutAlign="space-between">
+				<button mat-stroked-button [disabled]="form.invalid" color="primary">
+					{{action1}}
+				</button>
+				<button mat-stroked-button (click)="cancel($event)"  color="primary">
+					Cancelar
+				</button>
+			</div>
+		</form>
+	</div>

@@ -1,0 +1,12 @@
+<div fxLayout="column" fxLayoutAlign="space-between center" id="parent-cont">
+	<div class="counter-contacts" fxLayoutAlign="center center"> 
+		<p class="text-center"><span class="large-text">{{contacts.length}}</span> <br> Total de contactos</p>
+		
+	</div>
+	<div id="reminders" class="mt-20" fxLayoutAlign="center center"> 
+		<p class="text-center"> <span class="large-text"> {{cont}}</span> <br> Recordatorios </p>
+	</div>
+	<div id="contacts" [routerLink]="['/contact-list']" class="mt-20 cursor-pointer outline-none" fxLayoutAlign="center center"> 
+		<mat-icon> contacts </mat-icon> <span class="ml-5">Mis contactos</span>
+	</div>
+</div>

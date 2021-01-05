@@ -1,0 +1,32 @@
+<div id="parent-cont" fxLayout="column" class="mt-20">
+	<div fxLayout="row" fxLayoutAlign="end">
+		<div>
+			<button mat-stroked-button [routerLink]="['/new-contact']" color="primary">
+				Nuevo Contacto
+			</button>
+		</div>
+	</div>
+	<div class="mt-20"></div>
+	<div id="list-cont">
+		<div *ngFor="let contact of contacts; index as i" class="mt-10">
+			<div fxLayout="row" fxLayoutAlign="space-between center" id="info-cont">
+				<div fxLayout="row" fxLayoutAlign="center center">
+					<mat-icon class="cursor-pointer">account_circle</mat-icon>	
+					<p class="ml-5"> 
+						{{contact.name}} <br> {{contact.telephone}} <br> {{contact.document}} 
+					</p>
+				</div>
+
+				<div fxLayout="row">
+					<mat-icon class="cursor-pointer icons" [routerLink]="['/update-contact', contact.document ]">create</mat-icon>
+					<mat-icon class="ml-5 cursor-pointer icons" (click)="deleteContact(i)">delete_forever</mat-icon>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="contacts.length==0">
+		<div fxLayout="row" fxLayoutAlign="center center">
+			No tiene contactos actualmente.
+		</div>
+	</div>
+</div>

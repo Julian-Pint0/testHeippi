@@ -1,0 +1,26 @@
+#parent-cont{
+	margin-top: 30px;
+	height: 100%;
+	width: 100%;
+}
+
+#parent-cont div {
+	height: 200px;
+	width: 200px;
+	background-color: #EA80FC;
+	color: #4A148C;
+}
+
+#parent-cont div:hover {
+	background-color: #E1BEE7;
+}
+
+
+
+#reminders {
+	margin-top: 20px
+}
+
+.large-text{
+	font-size: 65px;
+}
