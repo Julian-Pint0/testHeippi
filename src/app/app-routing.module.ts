@@ -9,7 +9,8 @@ const routes: Routes = [
 	{ path: "home", component: HomeComponent},
 	{ path: "contact-list", component: ContactListComponent},
 	{ path: "new-contact", component: NewContactComponent},
-	{ path: "update-contact/:id", component: UpdateContactComponent }
+	{ path: "update-contact/:id", component: UpdateContactComponent },
+	{ path: '**', component: HomeComponent }
 	
 ];
 
